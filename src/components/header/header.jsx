@@ -10,7 +10,6 @@ const Header = (props) => {
 
   return (
     <header className="main-header">
-    Header
     	<nav className="main-nav">
     		<a href="/">Главная</a>
     		<MenuList />

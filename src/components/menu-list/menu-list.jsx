@@ -5,7 +5,6 @@ import {ActionCreator} from "../../store/action";
 import {fetchItem} from "../../store/api-actions";
 import store from "../../store/store";
 
-
 const MenuList = (props) => {
   const {items} = props;
 
@@ -15,21 +14,32 @@ const MenuList = (props) => {
   	evt.preventDefault();
   	menuStatus ? setMenuStatus(false) : setMenuStatus(true);
   }
+  const handleCloseClick = (evt) => {
+    evt.preventDefault();
+    setMenuStatus(false);
+  }
+  const handleLinkClick = (evt) => {
+    evt.preventDefault();
+    store.dispatch(fetchItem(evt.currentTarget.dataset.id));
+  }
 
   return (
   	<>
-	  <div className={menuStatus ? "menu-button menu-open" : "menu-button"} onClick={handleClick}>
-	  	Меню
-  	      <ul className="menu-list">
-  	    	{
-  		    	items.map((item, index) => {
-  		    		return <li key={index}><a href="#" onClick={handleClick}>{item.name}</a></li>
-  		    	})
-  	    	}
-  	      </ul>	  
-	  </div>
+  	  <div className={menuStatus ? "menu-button menu-open" : "menu-button"} onClick={handleClick}>
+  	  	Меню
+    	      <ul className="menu-list">
+    	    	{
+    		    	items.map((item, index) => {
+    		    		return <li className="menu-item" data-id={item.name} onClick={handleLinkClick} key={index}>
+                  {item.name}
+                </li>
+    		    	})
+    	    	}
+              <img className="menu-close" onClick={handleCloseClick} src="/img/close.png"/>
+    	      </ul>	  
+  	  </div>
 
-	</>
+  	</>
 
   );
 };
