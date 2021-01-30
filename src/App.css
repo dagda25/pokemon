@@ -259,6 +259,11 @@ body {
   "stats stats stats stats";
 }
 
+.item-content > * {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 @media screen and (max-width: 1023px) {
   .item-content {
     display: grid;
@@ -270,11 +275,12 @@ body {
     "abilities abilities abilities"
     "stats stats stats";
   }
-}
 
-.item-content > * {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  .item-content > * {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
 }
 
 .item-title {
@@ -303,6 +309,7 @@ body {
 }
 
 .item-images > img {
+  margin-bottom: 10px;
   border-radius: 15px;
   border: 2px solid #2F4F4F;
   background-color: #E0FFFF;
@@ -489,6 +496,10 @@ body {
     -23px 0 20px -23px rgba(0, 0, 0, .8),
     23px 0 20px -23px rgba(0, 0, 0, .8),
     0 0 40px rgba(0, 0, 0, .1) inset;
+  }
+
+  .item-images {
+    padding: 15px 0;
   }
 
 }
