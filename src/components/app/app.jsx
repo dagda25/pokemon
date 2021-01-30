@@ -35,6 +35,11 @@ const App = (props) => {
               />
             );
           }} />
+        <Route
+          render={() => (
+            <Redirect to={AppRoute.ROOT} />
+          )} 
+        />
       </Switch>
     </Router>
   );

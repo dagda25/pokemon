@@ -6,7 +6,6 @@ import ItemCard from "../item-card/item-card";
 import {fetchItem, fetchItemWithoutRedirect} from "../../store/api-actions";
 import store from "../../store/store";
 
-
 const ItemList = (props) => {
   const {items} = props;
 

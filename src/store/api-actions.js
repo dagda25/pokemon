@@ -32,6 +32,16 @@ export const fetchItem = (name) => (dispatch, _getState, api) => (
   P.getPokemonByName(name)
     .then((data) => {
       dispatch(ActionCreator.getItem(data));
+      return data;
+    })
+    .then((data) => {
+      const arr = data.held_items.map((el) => {
+         return el.item.url;
+      })
+      return P.resource(arr)
+    })
+    .then((data) => {
+      dispatch(ActionCreator.getHeldItemsImages(data));
     })
     .then(() => dispatch(ActionCreator.redirectToRoute(`/${AppRoute.ITEM}/${name}`)))
 );
@@ -40,6 +50,16 @@ export const fetchItemWithoutRedirect = (name) => (dispatch, _getState, api) => 
   P.getPokemonByName(name)
     .then((data) => {
       dispatch(ActionCreator.getItem(data));
+      return data;
+    })
+    .then((data) => {
+      const arr = data.held_items.map((el) => {
+         return el.item.url;
+      })
+      return P.resource(arr)
+    })
+    .then((data) => {
+      dispatch(ActionCreator.getHeldItemsImages(data));
     })
 );
 

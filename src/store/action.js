@@ -3,6 +3,7 @@ export const ActionType = {
   GET_ITEM: `GET_ITEM`,
   GET_IMAGES: `GET_IMAGES`,
   REDIRECT_TO_ROUTE: `REDIRECT_TO_ROUTE`,
+  GET_HELD_ITEMS_IMAGES: `GET_HELD_ITEMS_IMAGES`,
 };
 
 export const ActionCreator = {
@@ -12,6 +13,10 @@ export const ActionCreator = {
   }),
   getItem: (data) => ({
     type: ActionType.GET_ITEM,
+    payload: data
+  }),
+  getHeldItemsImages: (data) => ({
+    type: ActionType.GET_HELD_ITEMS_IMAGES,
     payload: data
   }),
   getImages: (data) => ({

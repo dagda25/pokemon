@@ -68,6 +68,36 @@ body {
   display: none;
 }
 
+@media screen and (min-width: 1024px) {
+  .menu-button:hover > .menu-list {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, 120px); 
+    grid-gap: 1rem; 
+    justify-content: space-evenly; 
+    position: absolute;
+    top: 37px;
+    left: 0px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px 10px;
+    border: 1px solid black;
+    background-color: #20B2AA;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px 0px;
+    z-index: 99;
+  }
+  .main-nav > a:hover, .menu-button:hover {
+    background-color: #316363;
+  }
+  .menu-item:hover {
+    text-decoration: underline;
+  }
+  .menu-close {
+    display: none;
+  }
+
+}
+
 .menu-open > .menu-list {
   display: grid; 
   grid-template-columns: repeat(auto-fill, 120px); 
@@ -86,14 +116,19 @@ body {
   z-index: 99;
 }
 
-.menu-close {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 0;
-  right: 0;
-  cursor: pointer;
+@media screen and (max-width: 1023px) {
+  .menu-close {
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
 }
+
+
 
 .menu-item { 
   margin-left: 10px;
@@ -110,6 +145,10 @@ body {
   width: 1024px;
   max-width: 100%;
   margin: 0 auto;
+}
+
+.item-section {
+  margin-top: 30px;
 }
 
 .item-list {
@@ -209,4 +248,104 @@ body {
   .menu-open > .menu-list {
     top: 70px;
   }
+}
+
+.item-content {
+  display: grid;
+  grid-template-areas: 
+    "name name name name"
+    "images images images items"
+    "height weight exp abilities"
+    "stats stats stats stats";
+}
+
+.item-title {
+  grid-area: name;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2F4F4F;
+  background-color: #9C9C9C;
+}
+
+.item-title > p {
+
+}
+
+.item-abilities {
+  grid-area: abilities;
+}
+
+.item-images {
+  grid-area: images;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px 0;
+}
+
+.item-images > img {
+  border-radius: 15px;
+  border: 2px solid #2F4F4F;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
+  -23px 0 20px -23px rgba(0, 0, 0, .8),
+  23px 0 20px -23px rgba(0, 0, 0, .8),
+  0 0 40px rgba(0, 0, 0, .1) inset;
+}
+
+.item-held {
+  grid-area: items;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.item-held > p {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.item-held .item-held-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  border-radius: 15px;
+  border: 2px solid #2F4F4F;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
+  -23px 0 20px -23px rgba(0, 0, 0, .8),
+  23px 0 20px -23px rgba(0, 0, 0, .8),
+  0 0 40px rgba(0, 0, 0, .1) inset;
+}
+
+.item-height {
+  grid-area: height;
+}
+
+.item-weight {
+  grid-area: weight;
+}
+
+.item-exp {
+  grid-area: exp;
+}
+
+.item-stats {
+  grid-area: stats;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item-stat-block {
+  width: 12%;
+}
+
+.item-content > * {
+  border: 1px solid black;
 }
