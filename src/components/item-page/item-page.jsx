@@ -67,8 +67,9 @@ const ItemPage = (props) => {
 			  		stats.map((el, i) => {
 			  			return (
 			  				<div className="item-stat-block" key={i}>
-			  					<div className="item-stat-name">{capitalize(el.stat.name)}</div> 
-			  					<div className="item-stat-value">{el.base_stat}</div> 	
+									<div className="item-stat-value">{el.base_stat}</div> 
+									<div className="column" style={{height: `${el.base_stat}px`}}></div>
+									<div className="item-stat-name">{capitalize(el.stat.name)}</div> 	
 			  				</div>
 			  			)
 			  		})
