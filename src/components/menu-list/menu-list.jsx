@@ -13,29 +13,29 @@ const MenuList = (props) => {
 
   const handleClick = (evt) => {
   	menuStatus ? setMenuStatus(false) : setMenuStatus(true);
-  }
+  };
   const handleCloseClick = (evt) => {
     evt.preventDefault();
     setMenuStatus(false);
-  }
+  };
   const handleLinkClick = (evt) => {
     store.dispatch(fetchItem(evt.currentTarget.dataset.id));
-  }
+  };
 
   return (
   	<>
-  	  <div className={menuStatus ? "menu-button menu-open" : "menu-button"} onTouchStart={handleClick}>
-  	  	Меню
+  	  <div className={menuStatus ? `menu-button menu-open` : `menu-button`}>
+  	  	<div className="menu-button" onTouchStart={handleClick}>Меню</div>
     	      <ul className="menu-list">
     	    	{
     		    	items.map((item, index) => {
-    		    		return <li className="menu-item" data-id={item.name} onClick={handleLinkClick} onTouchStart={handleLinkClick} key={index}>
-                  {capitalize(item.name)}
-                </li>
+    		    		return <li className="menu-item" data-id={item.name} onClick={handleLinkClick} key={index}>
+  	            {capitalize(item.name)}
+  	          </li>;
     		    	})
     	    	}
-              <img className="menu-close" onTouchStart={handleCloseClick} src="/img/close.png"/>
-    	      </ul>	  
+  	      <img className="menu-close" onTouchStart={handleCloseClick} src="/img/close.png"/>
+    	      </ul>
   	  </div>
 
   	</>
@@ -45,7 +45,7 @@ const MenuList = (props) => {
 
 
 MenuList.propTypes = {
-  
+
 };
 
 const mapStateToProps = ({APP}) => ({

@@ -253,10 +253,23 @@ body {
 .item-content {
   display: grid;
   grid-template-areas: 
-    "name name name name"
-    "images images images items"
-    "height weight exp abilities"
-    "stats stats stats stats";
+  "name name name name"
+  "images images images items"
+  "height weight exp abilities"
+  "stats stats stats stats";
+}
+
+@media screen and (max-width: 1023px) {
+  .item-content {
+    display: grid;
+    grid-template-areas: 
+    "name name name"
+    "images images images"
+    "items items items"
+    "height weight exp"
+    "abilities abilities abilities"
+    "stats stats stats";
+  }
 }
 
 .item-title {
@@ -290,6 +303,7 @@ body {
 .item-images > img {
   border-radius: 15px;
   border: 2px solid #2F4F4F;
+  background-color: #E0FFFF;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
   -23px 0 20px -23px rgba(0, 0, 0, .8),
   23px 0 20px -23px rgba(0, 0, 0, .8),
@@ -315,6 +329,8 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 5px;
+  margin-bottom: 10px;
+  background-color: #E0FFFF;
   border-radius: 15px;
   border: 2px solid #2F4F4F;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
@@ -325,14 +341,52 @@ body {
 
 .item-height {
   grid-area: height;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-height > .title,
+.item-weight > .title,
+.item-exp > .title,
+.item-abilities > .title,
+.item-stat-name {
+  text-align: center;
+}
+
+.item-height > .value,
+.item-weight > .value,
+.item-exp > .value,
+.item-stat-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 2px solid  #2F4F4F;
+  background-color: #E0FFFF;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
+  -23px 0 20px -23px rgba(0, 0, 0, .8),
+  23px 0 20px -23px rgba(0, 0, 0, .8),
+  0 0 40px rgba(0, 0, 0, .1) inset;
 }
 
 .item-weight {
   grid-area: weight;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .item-exp {
   grid-area: exp;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .item-stats {
@@ -343,7 +397,12 @@ body {
 }
 
 .item-stat-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 12%;
+  min-width: 50px;
 }
 
 .item-content > * {
