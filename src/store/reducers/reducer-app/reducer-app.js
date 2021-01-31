@@ -1,10 +1,9 @@
 import {ActionType} from "../../action";
-import {extend} from "../../../utils/utils";
 
 
 const initialState = {
-   items: [],
-   currentItem: null,
+  items: [],
+  currentItem: null,
 
 };
 
@@ -14,7 +13,7 @@ const assignImages = (state, data) => {
     el.images = data[index];
   });
   return newState;
-}
+};
 
 const assignHeldImages = (state, data) => {
   let newState = JSON.parse(JSON.stringify(state));
@@ -23,7 +22,7 @@ const assignHeldImages = (state, data) => {
   });
 
   return newState;
-}
+};
 
 const reducerApp = (state = initialState, action) => {
   switch (action.type) {
@@ -42,8 +41,6 @@ const reducerApp = (state = initialState, action) => {
     default:
       return state;
   }
-
-  return state;
 };
 
 export {reducerApp};

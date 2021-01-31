@@ -1,21 +1,16 @@
 
-import '../../App.css';
-
 import React from "react";
-import PropTypes from "prop-types";
 import {Switch, Route, Router} from "react-router-dom";
 import {connect} from "react-redux";
-import {ActionCreator} from "../../store/action";
 import MainPage from "../main-page/main-page";
 import ItemPage from "../item-page/item-page";
-import {login} from "../../store/api-actions";
 import browserHistory from "../../browser-history";
 import {Redirect} from "react-router-dom";
-import {AuthorizationStatus, AppRoute} from "../../utils/const";
+import {AppRoute} from "../../utils/const";
+import '../../App.css';
 
 
-const App = (props) => {
-  const {} = props;
+const App = () => {
 
   return (
     <Router history={browserHistory}>
@@ -38,7 +33,7 @@ const App = (props) => {
         <Route
           render={() => (
             <Redirect to={AppRoute.ROOT} />
-          )} 
+          )}
         />
       </Switch>
     </Router>
@@ -54,7 +49,7 @@ const mapStateToProps = ({APP}) => ({
   currentItem: APP.currentItem,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = () => ({
 
 });
 

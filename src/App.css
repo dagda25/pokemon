@@ -470,32 +470,11 @@ body {
     width: 100%;
   }
 
-  .item-stats .column {
-    display: none;
-  }
   .item-stat-block {
     flex-direction: column;
     justify-content: space-evenly;
-    width: 50%;
+    width: 33%;
     margin-bottom: 20px;
-  }
-
-  .item-stat-value {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 50%;
-    border: 2px solid  #2F4F4F;
-    background-color: #E0FFFF;
-    text-align: center;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
-    -23px 0 20px -23px rgba(0, 0, 0, .8),
-    23px 0 20px -23px rgba(0, 0, 0, .8),
-    0 0 40px rgba(0, 0, 0, .1) inset;
   }
 
   .item-images {
