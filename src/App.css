@@ -255,7 +255,7 @@ body {
   grid-template-areas: 
   "name name name name"
   "images images images items"
-  "height weight exp abilities"
+  "characteristic characteristic characteristic abilities"
   "stats stats stats stats";
 }
 
@@ -271,7 +271,7 @@ body {
     "name name name"
     "images images images"
     "items items items"
-    "height weight exp"
+    "characteristic characteristic characteristic"
     "abilities abilities abilities"
     "stats stats stats";
   }
@@ -402,6 +402,15 @@ body {
 
 }
 
+.item-abilities,
+.item-images,
+.item-stats,
+.item-held,
+.item-characteristic {
+  border: 1px solid #2F4F4F;
+  border-radius: 10px;
+}
+
 .item-abilities > .title {
   width: 100%;
   font-size: 18px;
@@ -423,14 +432,12 @@ body {
 }
 
 .item-weight {
-  grid-area: weight;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .item-exp {
-  grid-area: exp;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -441,6 +448,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.item-characteristic {
+  grid-area: characteristic;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;  
 }
 
 .item-stats .title {

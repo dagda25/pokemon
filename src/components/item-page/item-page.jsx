@@ -53,9 +53,11 @@ const ItemPage = (props) => {
             })
           }
         </div>
-        <div className="item-height"><p className="title">Height: </p><div className="value">{height}</div></div>
-        <div className="item-weight"><p className="title">Weight: </p><div className="value">{weight}</div></div>
-        <div className="item-exp"><p className="title">Experience: </p><div className="value">{base_experience}</div></div>
+        <div className="item-characteristic">
+          <div className="item-height"><p className="title">Height: </p><div className="value">{height}</div></div>
+          <div className="item-weight"><p className="title">Weight: </p><div className="value">{weight}</div></div>
+          <div className="item-exp"><p className="title">Experience: </p><div className="value">{base_experience}</div></div>
+        </div>
         <div className="item-stats"><p className="title">Stats: </p>
           {
             stats.map((el, i) => {
