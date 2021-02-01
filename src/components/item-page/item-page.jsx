@@ -26,7 +26,7 @@ const ItemPage = (props) => {
       <main className="item-content">
         <div className="item-title"><p>{capitalize(name)}</p></div>
         <div className="item-abilities">
-          <p className="title">Abilities</p>
+          <p className="title">Abilities:</p>
           {
             abilities.map((el, i) => {
               return <div key={i} className="item-ability">{capitalize(el.ability.name)}</div>;
@@ -41,7 +41,7 @@ const ItemPage = (props) => {
           {sprites.front_shiny && <img src={sprites.back_shiny}/>}
         </div>
         <div className="item-held">
-          <p>{held_items.length ? `Items` : `No items`}</p>
+          <p>{held_items.length ? `Items:` : `No items`}</p>
           {
             held_items.map((el, i) => {
               return (

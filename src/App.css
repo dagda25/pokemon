@@ -257,11 +257,12 @@ body {
   "images images images items"
   "characteristic characteristic characteristic abilities"
   "stats stats stats stats";
+  grid-gap: 2vw;
 }
 
 .item-content > * {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -289,10 +290,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 40px;
-  font-size: 18px;
+  margin-top: 20px;
+  font-size: 22px;
   font-weight: bold;
   color: #2F4F4F;
-  background-color: #9C9C9C;
 }
 
 
@@ -406,9 +407,11 @@ body {
 .item-images,
 .item-stats,
 .item-held,
-.item-characteristic {
-  border: 1px solid #2F4F4F;
+.item-characteristic,
+.item-title {
+  border: 2px solid #2F4F4F;
   border-radius: 10px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, .2) inset, 3px 4px #989898;
 }
 
 .item-abilities > .title {
@@ -486,13 +489,17 @@ body {
 
   .item-stat-block {
     flex-direction: column;
-    justify-content: space-evenly;
     width: 33%;
     margin-bottom: 20px;
   }
 
   .item-images {
     padding: 15px 0;
+  }
+
+  .item-abilities .title,
+  .item-held > p {
+    margin-bottom: 10px;
   }
 
 }
